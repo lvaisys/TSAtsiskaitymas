@@ -22,9 +22,33 @@ h1 {
 }
 
 #output {
+  text-align: center;
   width: 80%;
   margin-top: 25px;
   padding: 30px;
   border-radius: 5px;
   background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+
+  >.teamCard {
+    width: 24%;
+    border: 3px solid rgb(49, 49, 49);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px; 
+    gap: 5px;
+    background-color: bisque;
+
+    >.teamPlayer {
+      border: 3px solid grey;
+      border-radius: 5px;
+      gap: 5px;
+      padding: 5px;
+      margin: 5px;
+      background-color: rgb(245, 238, 229);
+    }
+  }
 }
