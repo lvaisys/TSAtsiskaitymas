@@ -25,21 +25,21 @@ const ENDPOINT = 'NBA.json';
 fetch(ENDPOINT)
   .then(res => res.json())
   .then((nba: NBA) => {
-    const outputDiv = document.querySelector(`#output`);
+    const outputDiv: Element = document.querySelector(`#output`)!;
     nba.teams.forEach(team => {
       const nbaTeamCard: HTMLDivElement = document.createElement('div');;
       nbaTeamCard.classList.add('teamCard');
-      const teamName = document.createElement('h2');
+      const teamName: HTMLHeadingElement = document.createElement('h2');
       teamName.textContent = team.name;
       nbaTeamCard.appendChild(teamName);
       team.players.forEach(player => {
         const playerCard: HTMLDivElement = document.createElement('div');;
         playerCard.classList.add('teamPlayer');
-        const playerName = document.createElement('h4');
+        const playerName: HTMLHeadingElement = document.createElement('h4');
         playerName.textContent = player.firstName;
-        const playerLastName = document.createElement('h4');
+        const playerLastName: HTMLHeadingElement = document.createElement('h4');
         playerLastName.textContent = player.lastName;
-        const playerLink = document.createElement('a');
+        const playerLink: HTMLAnchorElement = document.createElement('a');
         playerLink.textContent = 'LearnMore';
         playerLink.href = player.googleSearch;
         playerCard.append(playerName, playerLastName, playerLink);

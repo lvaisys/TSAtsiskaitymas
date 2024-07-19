@@ -8,31 +8,27 @@ Parašykite TS kodą, kuris leis vartotojui įvesti ilgį metrais ir pamatyti jo
 
 Pastaba: Atvaizdavimas turi būti matomas su kiekviena įvestimi ir pateikiamas <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
-
-document
-  .querySelector('form')?.addEventListener('change', (e: Event) => {
+var _a;
+(_a = document
+    .querySelector('form')) === null || _a === void 0 ? void 0 : _a.addEventListener('change', function (e) {
     e.preventDefault();
-
-    const value: number = (document.querySelector('#meter') as HTMLInputElement).valueAsNumber;
-
-    const outputDiv: Element = document.querySelector('#output')!;
+    var value = document.querySelector('#meter').valueAsNumber;
+    var outputDiv = document.querySelector('#output');
     outputDiv.replaceChildren();
-
-    const centimetrai: number = value * 100;
-    const coliai: number = value * 39.37;
-    const pedos: number = value * 3.281;
-    const mylios: number = value / 1609;
-    const jardai: number = value * 1.094;
-
-    const centimetraiP: HTMLParagraphElement = document.createElement('p');
+    var centimetrai = value * 100;
+    var coliai = value * 39.37;
+    var pedos = value * 3.281;
+    var mylios = value / 1609;
+    var jardai = value * 1.094;
+    var centimetraiP = document.createElement('p');
     centimetraiP.textContent = 'Centimetrai (cm): ' + centimetrai;
-    const coliaiP: HTMLParagraphElement = document.createElement('p');
+    var coliaiP = document.createElement('p');
     coliaiP.textContent = 'Coliai (in): ' + coliai;
-    const pedosP: HTMLParagraphElement = document.createElement('p');
+    var pedosP = document.createElement('p');
     pedosP.textContent = 'Pėdos (ft): ' + pedos;
-    const myliosP: HTMLParagraphElement = document.createElement('p');
+    var myliosP = document.createElement('p');
     myliosP.textContent = 'Mylios (mi): ' + mylios;
-    const jardaiP: HTMLParagraphElement = document.createElement('p');
+    var jardaiP = document.createElement('p');
     jardaiP.textContent = 'Jardai (yd): ' + jardai;
     outputDiv.append(centimetraiP, coliaiP, pedosP, myliosP, jardaiP);
-  })
+});
