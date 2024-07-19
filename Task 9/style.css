@@ -27,4 +27,50 @@ h1 {
   padding: 30px;
   border-radius: 5px;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 30px;
+
+  >.teamCard {
+    width: 400px;
+    height: 500px;
+    border: 4px solid rgb(112, 77, 1);
+    border-radius: 10px;
+    background-color: rgba(230, 230, 230, 0.623);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    button {
+      border: none;
+      background-color: rgb(75, 75, 182);
+      color: antiquewhite;
+      font-size: large;
+      padding: 15px;
+    }
+
+    >dialog {
+      align-items: center;
+      justify-content: center;
+      width: 40%;
+      height: fit-content;
+
+      .detailedPlayersWrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 3px;
+
+        >.playerDiv {
+          border: 1px solid darkslategrey;
+        }
+      }
+    }
+  }
 }
