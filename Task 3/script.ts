@@ -12,22 +12,27 @@ type TipasNaudoti = {
   spalva: string,
   kilometrazas: number
 };
-
-const dviratis = {
+type TransportoPriemone = {
+  [Key in keyof TipasNaudoti]?: TipasNaudoti[Key]
+}
+const dviratis: TransportoPriemone = {
   metai: 1999,
   spalva: ''
 };
-const naujaMasina = {
+const naujaMasina: TransportoPriemone = {
   marke: '',
   modelis: '',
   metai: 2025,
   spalva: ''
 };
-const senaMasina = {
+type IstorinėTransportoPriemone = TipasNaudoti & {
+  surudyjesDugnas: boolean
+}
+const senaMasina: IstorinėTransportoPriemone = {
   marke: '',
   modelis: '',
   metai: 2025,
   spalva: '',
   kilometrazas: 999999,
-  surudyjesDugnas: true  
+  surudyjesDugnas: true
 };
